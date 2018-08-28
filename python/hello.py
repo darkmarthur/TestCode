@@ -5,5 +5,6 @@ my_url = "https://www.newegg.com/global/mx/Gaming-Laptops/SubCategory/ID-3365?Ti
 uClient = ureq(my_url)
 pageHtml = uClient.read()
 uClient.close()
-pageSoup = soup(pageHtml, "html.parser")
-pageSoup.h1
+ps = soup(pageHtml, "html.parser")
+ps.h1
+containers = ps.findAll("div", {"class" : "item-container"})
